@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# print "Best School" ten times using for loop
+files=$(ls)
+for file in $files
+do
+    echo "$file" | cut -d '-' -f2
+done
