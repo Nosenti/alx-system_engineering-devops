@@ -1,2 +1,3 @@
-#!/usr/bin/bash
+#!/usr/bin/env bash
+# script to show ports
 netstat --listening --program

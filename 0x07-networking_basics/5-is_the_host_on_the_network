@@ -1,6 +1,5 @@
-#!/bin/bash
-
-# Check if an argument is provided
+#!/usr/bin/env bash
+# script to ping ip addresses
 if [ $# -ne 1 ]; then
     echo "Usage: $0 {IP_ADDRESS}"
     exit 1
