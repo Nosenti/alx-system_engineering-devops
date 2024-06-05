@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 """A script to fetch TODO lists of all employees from JSONPlaceholder API
 and export them to a JSON file."""
-import requests
 import json
+import requests
 
 
 def export_all_tasks_to_json():
