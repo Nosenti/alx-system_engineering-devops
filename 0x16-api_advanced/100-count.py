@@ -5,7 +5,7 @@ import requests
 import re
 
 
-def count_words(subreddit, word_list, hot_list=[], after=None, word_count={}):
+def count_words(subreddit, word_list, hot_list, word_count, after=None):
     """
     Recursively counts and prints the number of times each keyword appears
     in the titles of all hot articles from a subreddit,
@@ -19,6 +19,11 @@ def count_words(subreddit, word_list, hot_list=[], after=None, word_count={}):
         used for pagination.
         word_count (dict): Accumulator for word counts.
     """
+    if hot_list is None:
+        hot_list = []
+    if word_count is None:
+        word_count = {}
+
     url = f"https://www.reddit.com/r/{subreddit}/hot.json"
     headers = {
         "User-Agent":
