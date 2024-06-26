@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+# Script to install nginx web server
+
+# Update package lists
+apt-get update
+
+# Install Nginx
+apt-get install -y nginx
+
+# Create a simple HTML file to serve
+echo "Hello World!" > /var/www/html/index.html
+
+# Use 'invoke-rc.d' to restart Nginx without using systemctl
+invoke-rc.d nginx restart
