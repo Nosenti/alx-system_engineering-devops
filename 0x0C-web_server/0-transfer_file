@@ -1,5 +1,5 @@
-#!/bin/bash
-# File: 0-transfer_file
+#!/usr/bin/env bash
+# Script to transfer files from the client to the server
 
 # Check if the number of arguments is less than 4
 if [ $# -lt 4 ]; then
