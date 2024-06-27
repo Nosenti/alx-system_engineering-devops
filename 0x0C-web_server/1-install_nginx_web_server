@@ -1,12 +1,14 @@
 #!/usr/bin/env bash
 # Script to install nginx web server
 
+echo -e "Installing Nginx...\n"
 # Update package lists
 sudo apt-get update -y -qq
 
 # Install Nginx
 sudo apt-get install nginx -y
 
+echo -e "Setup...\n"
 # Start the Nginx server
 sudo service nginx start
 
@@ -25,3 +27,5 @@ echo -e "Hello World!" | dd status=none of=/var/www/html/index.nginx-debian.html
 
 # Restart nginx
 sudo service nginx restart
+
+echo -e "\nCompleted.\n"
