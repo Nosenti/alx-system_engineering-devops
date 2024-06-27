@@ -2,10 +2,10 @@
 # Script to install nginx web server
 
 # Update package lists
-sudo apt-get update
+sudo apt-get update -y -qq
 
 # Install Nginx
-sudo apt-get install -y nginx
+sudo apt-get install nginx -y
 
 # Start the Nginx server
 sudo service nginx start
@@ -24,4 +24,4 @@ cp /var/www/html/index.nginx-debian.html /var/www/html/index.nginx-debian.html.b
 echo -e "Hello World!" | dd status=none of=/var/www/html/index.nginx-debian.html
 
 # Restart nginx
-sudo servince nginx restart
+sudo service nginx restart
