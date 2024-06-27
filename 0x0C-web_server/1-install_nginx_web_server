@@ -7,8 +7,21 @@ sudo apt-get update
 # Install Nginx
 sudo apt-get install -y nginx
 
-# Create a simple HTML file to serve
-echo "Hello World!" > /var/www/html/index.html
+# Start the Nginx server
+sudo service nginx start
 
-# Use 'invoke-rc.d' to restart Nginx without using systemctl
-invoke-rc.d nginx restart
+# Allowing Nginx on Firewall
+sudo ufw allow 'Nginx HTTP'
+
+# Give ownership
+sudo chown -R "$USER":"$USER" /var/www/html
+sudo chmod -R 755 /var/www
+
+# Backup
+cp /var/www/html/index.nginx-debian.html /var/www/html/index.nginx-debian.html.bckp
+
+# Create a simple HTML file to serve
+echo -e "Hello World!" | dd status=none of=/var/www/html/index.nginx-debian.html
+
+# Restart nginx
+sudo servince nginx restart
