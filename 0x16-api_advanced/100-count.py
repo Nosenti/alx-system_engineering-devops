@@ -19,6 +19,8 @@ def count_words(subreddit, word_list, hot_list=[], after=None, word_count={}):
         used for pagination.
         word_count (dict): Accumulator for word counts.
     """
+    if not word_list or word_list == [] or not subreddit:
+        return
     url = f"https://www.reddit.com/r/{subreddit}/hot.json"
     headers = {
         "User-Agent":
